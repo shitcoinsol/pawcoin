@@ -16,7 +16,7 @@
       color: #3a2f2f;
       text-align: center;
       padding: 20px;
-        cursor: url('paw-cursor.png') 16 16, auto !important;
+      cursor: url('paw-cursor.png') 16 16, auto !important;
     }
 
     h2 {
@@ -106,9 +106,39 @@
       background: #f4e3cc;
       padding: 12px 22px;
       border-radius: 12px;
-        overflow-x: auto;
-  white-space: nowrap;
-  max-width: 100%;
+      overflow-x: auto;
+      white-space: nowrap;
+      max-width: 100%;
+    }
+
+    .ca-text-short {
+      display: none;
+    }
+
+    .ca-text-full {
+      display: inline;
+    }
+
+    @media (max-width: 600px) {
+      .ca-text-short {
+        display: inline;
+      }
+      .ca-text-full {
+        display: none;
+      }
+
+      .tokenomics {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+      }
+
+      .community-buttons {
+        flex-direction: column;
+      }
     }
 
     .copy-btn {
@@ -133,21 +163,9 @@
       gap: 20px;
     }
 
-    @media (max-width: 600px) {
-      .tokenomics {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .card {
-        width: 90%;
-      }
-
-      .community-buttons {
-        flex-direction: column;
-      }
+    * {
+      cursor: url('paw-cursor.png') 16 16, auto !important;
     }
- * { cursor: url('paw-cursor.png') 16 16, auto !important; }
   </style>
 </head>
 <body>
@@ -185,7 +203,8 @@
       </div>
     </div>
     <div class="ca-box">
-      <span id="ca">0xABCDEF1234567890abcdef1234567890ABCDEF12</span>
+      <span class="ca-text-short">0xABCDEF...EF12</span>
+      <span class="ca-text-full" id="ca-full">0xABCDEF1234567890abcdef1234567890ABCDEF12</span>
       <button class="copy-btn" onclick="copyCA()">Copy</button>
     </div>
   </div>
@@ -208,7 +227,7 @@
 
   <script>
     function copyCA() {
-      const ca = document.getElementById("ca").innerText;
+      const ca = document.getElementById("ca-full").innerText;
       navigator.clipboard.writeText(ca).then(() => {
         alert("Contract address copied to clipboard!");
       });
