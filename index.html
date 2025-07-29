@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pawcoin</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Fredoka One', cursive;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #3a2f2f;
+      text-align: center;
+      padding: 20px;
+        cursor: url('paw-cursor.png') 16 16, auto !important;
+    }
+
+    h2 {
+      color: #444;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+
+    p, span, a {
+      color: #5a4747;
+    }
+
+    .logo {
+      width: 280px;
+      margin: 40px auto 10px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    .catchphrase {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #ffffff;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #ffcc00;
+      color: #222;
+      padding: 14px 24px;
+      margin: 10px;
+      font-size: 1.1rem;
+      border-radius: 12px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 2px 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      background-color: #fbbf24;
+    }
+
+    .section {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    .tokenomics {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      width: 200px;
+      background: rgba(255, 240, 220, 0.9);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 3px 6px 14px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+
+    .ca-box {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      background: #f4e3cc;
+      padding: 12px 22px;
+      border-radius: 12px;
+    }
+
+    .copy-btn {
+      background-color: #ffcc00;
+      border: none;
+      padding: 6px 12px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      background-color: #fbbf24;
+    }
+
+    .community-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .tokenomics {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+      }
+
+      .community-buttons {
+        flex-direction: column;
+      }
+    }
+ * { cursor: url('paw-cursor.png') 16 16, auto !important; }
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="Pawcoin Logo" class="logo" />
+  <div class="catchphrase">Making the world Pawsitive</div>
+
+  <a href="https://letsbonk.fun" target="_blank" class="btn">Buy Now</a>
+
+  <div class="section">
+    <h2>About Pawcoin</h2>
+    <p>
+      Pawcoin is a meme coin project dedicated to helping abandoned and stray dogs and cats.<br>
+      100% of the developer's creator fee is donated to
+      <a href="https://bestfriends.org/donate/cryptocurrency-donations" target="_blank">Best Friends Animal Society</a>.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Tokenomics</h2>
+    <div class="tokenomics">
+      <div class="card">
+        <img src="supply.png" alt="Supply" />
+        <h3>Supply</h3>
+        <p>999.99M</p>
+      </div>
+      <div class="card">
+        <img src="burnandlock.png" alt="Lock & Burn" />
+        <h3>Lock & Burn</h3>
+        <p>Locked and Burned</p>
+      </div>
+      <div class="card">
+        <img src="taxes.png" alt="Taxes" />
+        <h3>Taxes</h3>
+        <p>0%</p>
+      </div>
+    </div>
+    <div class="ca-box">
+      <span id="ca">0xABCDEF1234567890abcdef1234567890ABCDEF12</span>
+      <button class="copy-btn" onclick="copyCA()">Copy</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Community</h2>
+    <div class="community-buttons">
+      <a href="https://x.com" target="_blank" class="btn">Official X</a>
+      <a href="https://x.com" target="_blank" class="btn">Join Community</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Support With a Donation</h2>
+    <p>Want to make a personal donation?<br>
+      Click below to directly support Best Friends Animal Society.
+    </p>
+    <a href="https://bestfriends.org/donate/cryptocurrency-donations" target="_blank" class="btn">Donate</a>
+  </div>
+
+  <script>
+    function copyCA() {
+      const ca = document.getElementById("ca").innerText;
+      navigator.clipboard.writeText(ca).then(() => {
+        alert("Contract address copied to clipboard!");
+      });
+    }
+  </script>
+</body>
+</html>
